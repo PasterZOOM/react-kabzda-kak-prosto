@@ -1,7 +1,7 @@
 import React from 'react';
 import {RatingValueType} from '../../App';
 
-type RatingPropsType = {
+export type RatingPropsType = {
     onClick: (value: RatingValueType) => void
     value: RatingValueType
 }
@@ -19,7 +19,7 @@ export function Rating(props: RatingPropsType) {
     )
 }
 
-type StarPropsType = {
+export type StarPropsType = {
     selected: boolean
     onClick: () => void
 }

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
 import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
-import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
+import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 import {OnOff} from './components/OnOff/OnOff';
 import {Rating} from './components/Rating/Rating';
-import Accordion from './components/Accordion/Accordion';
+import {Accordion} from './components/Accordion/Accordion';
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -18,7 +18,7 @@ function App() {
 
     return (
         <div>
-            <UncontrolledOnOff/>
+            <UncontrolledOnOff onChange={setSwitchOn}/>
             <UncontrolledAccordion titleValue={'Menu'}/>
             <UncontrolledRating/>
 
