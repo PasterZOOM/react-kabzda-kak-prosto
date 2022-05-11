@@ -5,7 +5,7 @@ type OnOffPropsType = {
     onClick:(value:boolean)=>void
 }
 
-export function OnOff(props: OnOffPropsType) {
+export function OnOffSecret(props: OnOffPropsType) {
 
     const onStyle = {
         width: '40px',
@@ -40,3 +40,4 @@ export function OnOff(props: OnOffPropsType) {
         <div style={indicatorStyle}/>
     </div>)
 }
+export const OnOff = React.memo(OnOffSecret)

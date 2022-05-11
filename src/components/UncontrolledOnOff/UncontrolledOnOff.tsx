@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 
 type OnOffPropsType = {
-    onChange:(on:boolean)=>void
-    defaultOn?:boolean
+    onChange: (on: boolean) => void
+    defaultOn?: boolean
 }
 
-export function UncontrolledOnOff(props:OnOffPropsType) {
+export function UncontrolledOnOffSecret(props: OnOffPropsType) {
 
-    let [on, setOn] = useState(props.defaultOn?props.defaultOn:false)
+    let [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
     const onStyle = {
         width: '40px',
@@ -37,14 +37,15 @@ export function UncontrolledOnOff(props:OnOffPropsType) {
     }
 
     const onClick = () => {
-        return (setOn(true),
+        setOn(true)
         props.onChange(!on)
-        )}
+    }
 
     const offClick = () => {
-        return (setOn(false),
-                props.onChange(!on)
-        )}
+        setOn(false)
+        props.onChange(!on)
+
+    }
 
     return (<div>
         <div style={onStyle} onClick={onClick}>On
@@ -54,3 +55,5 @@ export function UncontrolledOnOff(props:OnOffPropsType) {
         <div style={indicatorStyle}/>
     </div>)
 }
+
+export const UncontrolledOnOff = React.memo(UncontrolledOnOffSecret)
