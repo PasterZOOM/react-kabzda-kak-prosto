@@ -80,12 +80,6 @@ export const LikeUseCallBack = () => {
     const [count, setCount] = useState(0)
     const [books, setBooks] = useState(['React', 'JS', 'HTML'])
 
-    // const addBook = () => {
-    //     const newUser = [...books, '<CSS>' + new Date().getTime()]
-    //     setBooks(newUser)
-    // }
-    // const memoizedAddBook = useMemo(()=>addBook, [books])
-
     const memoizedAddBook = useCallback(() => {
         console.log(books)
         const newUser = [...books, '<CSS>' + new Date().getTime()]
