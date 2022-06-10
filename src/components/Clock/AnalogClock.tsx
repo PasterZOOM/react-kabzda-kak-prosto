@@ -1,15 +1,8 @@
 import React from 'react';
 import style from './SuperClock.module.css';
+import {ClockViewPropsType} from './SuperClock';
 
-type AnalogClockPropsType = {
-    date: {
-        getHours: () => number
-        getMinutes: () => number
-        getSeconds: () => number
-    }
-}
-
-export const AnalogClock: React.FC<AnalogClockPropsType> = ({date}) => {
+export const AnalogClock: React.FC<ClockViewPropsType> = ({date}) => {
     return <div className={style.clock}>
         <div
             className={style.hour_hand}

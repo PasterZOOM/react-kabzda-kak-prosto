@@ -4,11 +4,15 @@ import {DigitalClock} from './DigitalClock';
 
 type ModType = 'analog' | 'digital'
 
-export type SuperClockPropsType = {
-    mod: ModType
+export type ClockViewPropsType = {
+    date: Date
 }
 
-export const SuperClock: React.FC<SuperClockPropsType> = ({mod}) => {
+export type SuperClockPropsType = {
+    mode: ModType
+}
+
+export const SuperClock: React.FC<SuperClockPropsType> = ({mode}) => {
 
     const [date, setDate] = useState(new Date())
 
@@ -21,16 +25,16 @@ export const SuperClock: React.FC<SuperClockPropsType> = ({mod}) => {
         }
     }, [])
 
-    const clock = (mod: ModType) => {
-        if (mod === 'analog') {
+    const clock = (mode: ModType) => {
+        if (mode === 'analog') {
             return <AnalogClock date={date}/>
         }
-        if (mod === 'digital') {
+        if (mode === 'digital') {
             return <DigitalClock date={date}/>
         }
     }
 
     return <>
-        {clock(mod)}
+        {clock(mode)}
     </>
 }

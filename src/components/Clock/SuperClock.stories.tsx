@@ -8,8 +8,8 @@ export default {
 }
 
 export const BaseExampleAnalog = () => {
-    return <SuperClock mod={'analog'}/>
+    return <SuperClock mode={'analog'}/>
 }
 export const BaseExampleDigital = () => {
-    return <SuperClock mod={'digital'}/>
+    return <SuperClock mode={'digital'}/>
 }
