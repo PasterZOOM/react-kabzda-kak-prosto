@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
+
 export default {
     tittle: 'useEffect demo'
 }
@@ -53,20 +54,28 @@ export const SetTimeoutExample = () => {
     </>
 }
 
+
 export const TimeExample = () => {
 
     const [date, setDate] = useState(new Date())
-    console.log('SetTimeoutExample')
+
+    const get2digitsString = (num: number) => ('0' + num).slice(-2)
+
+    let hours = get2digitsString(date.getHours())
+    let minuets = get2digitsString(date.getMinutes())
+    let seconds = get2digitsString(date.getSeconds())
 
     useEffect(() => {
 
-        setInterval(() => {
+        let interval = setInterval(() => {
             setDate(() => new Date())
         }, 1000)
-
+        return () => {
+            clearInterval(interval)
+        }
     }, [])
 
     return <>
-        {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}
+        {hours}:{minuets}:{seconds}
     </>
 }

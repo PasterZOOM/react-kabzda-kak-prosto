@@ -1,0 +1,1 @@
+export const get2digitsString = (num: number) => ('0' + num).slice(-2)
